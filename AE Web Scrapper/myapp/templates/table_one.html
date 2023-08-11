@@ -1,0 +1,96 @@
+{% extends "base_table.html" %}
+
+{% block title %} Table One {% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <form id="filter-form" method="GET" action="{{ url_for('views.display_table_one') }}">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="product_type">Filter by Product Type:</label>
+                    <select class="form-control" id="product_type" name="product_type">
+                        <option value="">All</option>
+                        {% for types in product_type_categories %}
+                            <option value="{{ types }}">{{ types }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="is_on_sale">Filter by Sale:</label>
+                    <select class="form-control" id="is_on_sale" name="is_on_sale">
+                        <option value="">All</option>
+                        <option value="true">Is on Sale</option>
+                        <option value="false">Not on Sale</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="has_a_promo">Filter by Promo:</label>
+                    <select class="form-control" id="has_a_promo" name="has_a_promo">
+                        <option value="">All</option>
+                        <option value="true">Has a Promo</option>
+                        <option value="false">No Promo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="price">Filter by Price:</label>
+                    <select class="form-control" id="price" name="price">
+                        <option value="">All</option>
+                        <option value="Accending">Cheapest to Expensive</option>
+                        <option value="Decending">Expensive to Cheapest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="search_keyword">Search by Product Name:</label>
+                    <input type="text" class="form-control" id="search_keyword" name="search" placeholder="Enter product name">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Apply Filters and Search</button>
+            </div>
+        </div>
+    </form>
+    <h1>American Eagle Data</h1>
+    <div class="table-container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                    <th>On Sale</th>
+                    <th>Has Promo</th>
+                    <th>Price</th>
+                    <th>Discount Price</th>
+                    <th>Promo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in ae_data_list %}
+                <tr>
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.date }}</td>
+                    <td>{{ data.product_name }}</td>
+                    <td>{{ data.product_type }}</td>
+                    <td>{{ data.on_sale }}</td>
+                    <td>{{ data.has_promo }}</td>
+                    <td>{{ data.price }}</td>
+                    <td>{{ data.discount_price }}</td>
+                    <td>{{ data.promo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
