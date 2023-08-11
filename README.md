@@ -69,7 +69,7 @@ Depending on your project's requirements, you might also consider using other Fl
     - home.html: extends base_table, where you input the link
     - table_one.html: extends base_table, where you view the data table
 
-## Demo
+## Demo (in progress...)
 
 Home Page and Home Page (minimized with drop-down navbar)
 <img width="1429" alt="Screenshot 2023-08-10 at 11 21 23 AM" src="https://github.com/pattypic/AE_WebScrapper_Database_Flaskwebserver/assets/124921178/af17a209-81d3-4ae7-af2b-83f1654f4ede"> <img width="848" alt="Screenshot 2023-08-10 at 12 58 18 PM" src="https://github.com/pattypic/AE_WebScrapper_Database_Flaskwebserver/assets/124921178/956fb9cf-4169-4876-8097-3b30ff97a461">
@@ -84,7 +84,10 @@ Page Traversal view:
 <img width="1440" alt="Screenshot 2023-08-10 at 1 02 47 PM" src="https://github.com/pattypic/AE_WebScrapper_Database_Flaskwebserver/assets/124921178/79a4a237-9ebb-431c-8308-1acc62f2609c">
 
 Table One with data:
+<img width="1440" alt="Screenshot 2023-08-11 at 12 37 48 PM" src="https://github.com/pattypic/AE_WebScrapper_Database_Flaskwebserver/assets/124921178/a5391612-f95c-428b-a538-121a362aa179">
 
-## Acknowledgment
+## Acknowledgment (in progress...)
 
-## Roadmap
+## Roadmap (in progress...)
+In the future, I would like to add more filters by features, add the ability to scrape data from multiple websites and compare data between multiple tables. 
+
